@@ -1,34 +1,10 @@
-class Sele:
-    def select_th(self):
-        global seclect
-        try:
-            print('''What you Want To Do
-            1. Encoding
-            2. decoding''')
-            seclect = int(input(">"))
-
-            if seclect > 2 or seclect < 1:
-                print("Please Enter Valid Value")
-                Sele.select_th(self)
-        except:
-            print("Please Choose Any Value from option 1 OR 2 ")
-            Sele.select_th(self)
-
-
-class Mess:
-    def message(self):
-        global messages, words, length
-        messages = input(">")
-        words = messages.split()
-        length = len(messages)
-
-
+# ----------------------Data Dictionary ---------------------------------
 encode = {
     "a": "{",
     "b": "|",
     "c": "}",
     "d": "~",
-    "e": "ÿ",
+    "e": "",
     "f": "Ç",
     "g": "ü",
     "h": "é",
@@ -83,7 +59,7 @@ decoding = {
     "|": "b",
     "}": "c",
     "~": "d",
-    "ÿ": "e",
+    "": "e",
     "Ç": "f",
     "ü": "g",
     "é": "h",
@@ -135,6 +111,32 @@ decoding = {
 }
 
 
+# ----------------------Functions----------------------------------------
+class Sele:
+    def select_th(self):
+        global seclect
+        try:
+            print('''What you Want To Do
+            1. Encoding
+            2. decoding''')
+            seclect = int(input(">"))
+
+            if seclect > 2 or seclect < 1:
+                print("Please Enter Valid Value")
+                Sele.select_th(self)
+        except:
+            print("Please Choose Any Value from option 1 OR 2 ")
+            Sele.select_th(self)
+
+
+class Mess:
+    def message(self):
+        global messages, words, length
+        messages = input(">")
+        words = messages.split()
+        length = len(messages)
+
+
 class Fun:
     def function_n(self):
         onebyone = ""
@@ -143,11 +145,11 @@ class Fun:
             onebyone += messages[i]
         if seclect == 1:
             for word in onebyone:
-                output += encode.get(word, word) + " "
+                output += encode.get(word, word) +""
             print(output)
         elif seclect == 2:
             for word in onebyone:
-                output += decoding.get(word, word) + " "
+                output += decoding.get(word, word) +""
             print(output)
         else:
             print(" Enter 1 or 2 only")
@@ -160,6 +162,6 @@ class All_Function:
         Mess.message(self)
         Fun.function_n(self)
 
-
+# ---------------------------Main--------------------------------------------------
 class main:
     All_Function.here(self=0)
