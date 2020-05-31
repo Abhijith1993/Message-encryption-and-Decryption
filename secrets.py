@@ -1,6 +1,7 @@
 print('''What you Want To Do
 1. Encoding
 2. decoding'''  )
+seclect = int(input(">"))
 messages = input(">")
 words = messages.split()
 length = len(messages)
@@ -120,14 +121,22 @@ decoding = {
 
 
 }
-onebyone =" "
-output =" "
+onebyone =""
+output =""
 for i in range(length):
     onebyone += messages[i]
+if seclect == 1:
+    for word in onebyone:
+        output += encode.get(word, word) + " "
+    print(output)
+elif seclect == 2:
+    for word in onebyone:
+        output += decoding.get(word, word) + " "
+    print(output)
+else:
+    print(" Enter 1 or 2 only")
 
-for word in onebyone:
-    output += encode.get(word, word) + " "
-print(output)
+
 
 
 
