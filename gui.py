@@ -136,20 +136,40 @@ out.grid(column=0, row=6)
 
 
 def clicked(): #----------take data -----------------
-    input_tx = txt.get("1.0", 'end-1c')
-    input_tx +=" hello"
+    messages = txt.get("1.0", 'end-1c')
+    length = len(messages)
+    onebyone = ""
+    output = ""
+    for i in range(length):
+        onebyone += messages[i]
+        for word in onebyone:
+            output += encode.get(word, word) + ""
+    print(output)
+    out.insert("1.0", output)
+
+def clicked1():
+    messages = txt.get("1.0", 'end-1c')
+    length = len(messages)
+    onebyone = ""
+    output = ""
+    for i in range(length):
+        onebyone += messages[i]
+        for word in onebyone:
+            output += decoding.get(word, word) + ""
+    print(output)
+
 
     #--------show dataa----------------
-    out.insert("1.0", input_tx)
+    out.insert("1.0", output)
 
 
 
 
-btn = Button(window, text="Encode", width=70, height=3, font=("Arial Bold", 8), command=clicked)
+btn = Button(window, text="Encode", width=70, height=3, font=("Arial Bold", 8), command=clicked )
 btn.grid(column=0, row=3)
 
 
-btn1 = Button(window, text="Decode", width=70, height=3, font=("Arial Bold", 8), command=clicked)
+btn1 = Button(window, text="Decode", width=70, height=3, font=("Arial Bold", 8), command=clicked1)
 btn1.grid(column=0, row=4)
 
 window.mainloop()
