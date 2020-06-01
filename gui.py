@@ -141,10 +141,11 @@ def clicked(): #----------take data -----------------
     onebyone = ""
     output = ""
     for i in range(length):
-        onebyone += messages[i]
+        onebyone = messages[i]
         for word in onebyone:
             output += encode.get(word, word) + ""
     print(output)
+    # --------show dataa----------------
     out.insert("1.0", output)
 
 def clicked1():
@@ -153,13 +154,11 @@ def clicked1():
     onebyone = ""
     output = ""
     for i in range(length):
-        onebyone += messages[i]
+        onebyone = messages[i]
         for word in onebyone:
             output += decoding.get(word, word) + ""
     print(output)
-
-
-    #--------show dataa----------------
+        #--------show dataa----------------
     out.insert("1.0", output)
 
 
@@ -174,5 +173,4 @@ btn1.grid(column=0, row=4)
 
 window.mainloop()
 
-# ----------------------tker Funtiofon------------------------------------
-message = txt.get()
+
