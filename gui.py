@@ -117,8 +117,9 @@ decoding = {
 
 window = Tk()
 
-window.title("E.D Message", )
+window.title("E.D Message V1.0                         By Abhijith" )
 window.geometry('500x500')
+window.iconbitmap('C:/Users/abhij/PycharmProjects/Pythonnew/All/new/p.ico')
 
 lbl = Label(window, text="Enter or Paste Your Text", font=("Arial Bold", 12))
 lbl.grid(column=0, row=0)
